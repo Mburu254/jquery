@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Task Manager</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    body, html {
+    height: 100%;x
+    background-repeat: no-repeat;
+    background-image: linear-gradient(rgb(102, 102, 102), rgb(0, 0, 0));
+  }
+
+  .container {
+    max-width: 80%;
+    padding: 40px 40px;
+}
+.yet{
+  background-color: #e74c3c;
+}
+.progres{
+  background-color: #e67e22;
+}
+.complete{
+  background-color: #27ae60; 
+}
+    </style>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+ 
+  </head>
+  <body>
+    <div class="container" style="background-color:#cbd0d3">
+      <h1>To-Do</h1>
+      <h3>Your task manager</h3>
+        <div class="panel">
+          <form class="formone">      
+            <input id="tsk" style="width:400px" type="text" placeholder="Enter task here" required reautofocus>
+            <label>Start time:</label>
+            <input id="Sdate" type="date" placeholder="Start Date" required>
+            <label>End time:</label>
+            <input id="Edate" type="date" placeholder="End Date" required>
+            <button class="btn" type="submit">Add</button>
+          </form>
+        </div>  
+      <div class="row">
+            <h2>LIST OF TASKS:</h2>
+        <div>
+          <div class="row">
+            <div class="yet col-sm-4">
+              <h3>Yet To Start:</h3>
+              <div id="yetTo">
+              </div>
+            </div>
+            <div class="progres col-sm-4" id="inprog">
+              <h3>In progress:</h3>
+            </div>
+            <div class="complete col-sm-4" id="comp">
+              <h3>Completed:</h3>
+            </div>
+            
+          </div>
+        </div>
+  </div>
+
+  <script type="text/javascript">
+    $( document ).ready(function() {
+   
+    $(".btn").click(function(){
+
+      var item = $('#Sdate').val();
+
+      $('#yetTo').append($('#tsk').val()+" "+$('#Edate').val()+"<br>");
+    
+      return false
+    })
+
+    
+  });
+
+
+
+  </script>
+  
+  </body>
+</html>
